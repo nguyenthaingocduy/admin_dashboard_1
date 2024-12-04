@@ -18,6 +18,12 @@ body {
     position: fixed;
     width: 240px;
     background: #0a2558;
+    transition: all 0.5s ease;
+}
+
+/* active phair viet dinh lien voi class sidebar de hoat dong duoc */
+.sidebar.active { 
+    width: 60px;
 }
 
 .sidebar .logo-details {
@@ -78,7 +84,8 @@ body {
     color: #fff;
     font-size: 15px;
     font-weight: 400;
-}
+    white-space: nowrap;
+}   
 
 /* Home-section */
 .home-section {
@@ -87,15 +94,34 @@ body {
     min-height: 100vh;
     width: calc(100% - 240px);
     left: 240px;
+    transition: all 0.5s ease;
 }
 
+.sidebar.sidebar.active ~ .home-section {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+
+
 .home-section nav {
+    position: fixed;
+    width: calc(100% - 240px);
+    left: 240px;
     height: 80px;
     background: #fff;
     padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: all 0.5s ease;
+
+}
+
+
+.sidebar.active ~ .home-section nav {
+    width: calc(100% - 60px);
+    left: 60px;
 }
 
 .home-section nav .sidebar-button {
@@ -173,4 +199,19 @@ nav .profile-details .admin_name {
 nav .profile-details i {
     color: #333;
     font-size: 25px;
+}
+
+.home-section .home-content {
+    position: relative;
+    padding-top: 100px;
+}
+
+.home-content .overview-boxes .box {
+    background: #fff;
+    padding: 15px 15px;
+}
+
+.home-content .overview-boxes .box .box_topic {
+    font-size: 20px;
+    font-weight: 500;
 }
